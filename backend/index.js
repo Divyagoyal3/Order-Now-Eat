@@ -8,7 +8,8 @@ import { connectDB } from "./config/db.js";
 import  connectCloudinary from "./config/cloudinary.js";
 import menuRoutes from "./routes/menuRoutes.js";
 import cartRoutes from "./routes/cartRoutes.js";
-
+import bookingRoutes from "./routes/bookingRoutes.js";
+import orderRoutes from "./routes/orderRoutes.js";
 dotenv.config();
 const app = express();
 
@@ -25,6 +26,8 @@ app.use("/api/auth", authRoutes);
 app.use("/api/category", categoryRoutes);
 app.use("/api/menu", menuRoutes);
 app.use("/api/cart", cartRoutes);
+app.use("/api/booking", bookingRoutes);
+app.use("/api/order", orderRoutes);
 
 app.get("/", (req, res) => {
     res.send("Hello World!");
